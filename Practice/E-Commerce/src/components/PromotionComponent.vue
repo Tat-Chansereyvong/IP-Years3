@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ButtonComponent from './ButtonComponent.vue';
+import ButtonComponent from './ButtonComponent.vue'
 export default {
   name: 'PromotionComponent',
   props: {
@@ -26,13 +26,17 @@ export default {
       type: String,
       default: '#81b13d99',
     },
-    buttonColor:{
+    buttonColor: {
       type: String,
       default: '#3BB77E',
-    }
+    },
+    imageWidth: {
+      type: String,
+      default: '60%',
+    },
   },
   components: {
-    ButtonComponent
+    ButtonComponent,
   },
 }
 </script>
@@ -40,40 +44,79 @@ export default {
 <style scoped>
 .container {
   border-radius: 10px;
-  padding-left: 45px;
-  padding-top: 70px;
+  padding: 20px;
   background-color: v-bind('containerColor');
-  min-width: 527px;
-  min-height: 300px;
-  position: relative; 
-  overflow: hidden; 
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.image{
-  position: absolute; 
+.image {
+  position: absolute;
   bottom: 0;
-  right: 0; 
-  max-width: 100%;
+  right: 0;
+  max-width: v-bind('imageWidth');
+  height: auto;
+  object-fit: contain;
 }
 
-.mini-container{
+.mini-container {
   display: flex;
   flex-direction: column;
 }
 
-.text-overlay{
-  position: absolute; 
-  max-width: 250px;
+.text-overlay {
+  position: relative;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 170px;
+  min-height: 140px;
+  z-index: 2;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
-  color: #253D4E;
+  color: #253d4e;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 25px;
+    min-height: 260px;
+    min-width: 320px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 45px;
+    padding-top: 70px;
+    min-width: 420px;
+    min-height: 300px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .image {
+    max-width: v-bind('imageWidth');
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    min-width: 527px;
+  }
 }
 </style>

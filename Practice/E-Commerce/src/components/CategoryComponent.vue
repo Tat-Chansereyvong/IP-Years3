@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <img :src="image" />
-    <h3 class = "title">{{ title }}</h3>
+    <h3 class="title">{{ title }}</h3>
     <span class="count">{{ productCount }} items</span>
   </div>
 </template>
@@ -36,18 +36,58 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 12px 8px;
   background-color: v-bind ('containerColor');
+  flex: 1;
+  min-width: 120px;
+  transition: transform 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .count {
   color: #818080;
-  font-size: 12px;
+  font-size: 11px;
   font-family: 'Lato';
+  margin-top: 4px;
 }
 
 .title {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  margin: 6px 0 0 0;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 12px;
+    min-width: 140px;
+  }
+  .title {
+    font-size: 15px;
+  }
+  .count {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 15px;
+    min-width: 160px;
+  }
+  .title {
+    font-size: 16px;
+  }
 }
 </style>
