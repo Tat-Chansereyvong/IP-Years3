@@ -42,7 +42,7 @@ export default {
 <style scoped>
 .menu-component {
   width: 100%;
-  max-width: 1800px;
+  max-width: 1900px;
   display: flex;
   justify-content: space-between;
   align-items: center;

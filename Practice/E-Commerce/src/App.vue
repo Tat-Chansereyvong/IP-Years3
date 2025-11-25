@@ -128,18 +128,24 @@ export default {
 }
 
 .category-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 12px;
+  display: flex;
+  gap: 25px;
   justify-items: center;
 }
 
 .promotion-wrapper {
   margin-top: 40px;
   display: flex;
-  grid-template-columns: 1fr;
   gap: 25px;
   margin-bottom: 30px;
+}
+
+.product-wrapper{
+  display: flex;
+  flex-direction: row;
+  max-width: 1900px;
+  gap: 26px;
+  flex-wrap: wrap;
 }
 
 .menu-component1 {
@@ -193,7 +199,7 @@ export default {
   }
 
   .menu-component1 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .menu-component2 {

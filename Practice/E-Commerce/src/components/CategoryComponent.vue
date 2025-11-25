@@ -39,7 +39,6 @@ export default {
   padding: 12px 8px;
   background-color: v-bind ('containerColor');
   flex: 1;
-  min-width: 120px;
   transition: transform 0.2s ease;
 }
 
@@ -84,10 +83,10 @@ export default {
 @media (min-width: 1024px) {
   .container {
     padding: 15px;
-    min-width: 160px;
+    min-width: 145px;
   }
   .title {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 </style>

@@ -117,9 +117,8 @@ export default {
 
 <style scoped>
 .product-card {
-  width: 298px;
   min-width: 298px;
-  max-width: 298px;
+  max-width: 337px;
   height: 402px;
   background: #fff;
   border: 1px solid #ececec;

@@ -60,12 +60,8 @@ export const useProductStore = defineStore('product', {
           badgeType = 'hot'
         }
         // Priority 3: Sale badge (low discount 1-14% OR moderate sales 100-199)
-        else if (
-          (product.promotionAsPercentage &&
-            product.promotionAsPercentage > 0 &&
-            product.promotionAsPercentage < 15) ||
-          (product.countSold && product.countSold >= 100 && product.countSold < 200)
-        ) {
+        else if (product.countSold && product.countSold >= 100)
+        {
           badge = 'Sale'
           badgeType = 'sale'
         }
